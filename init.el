@@ -14,3 +14,7 @@
 
 ;; magit
 (package-install 'magit)
+
+;; theme
+(package-install 'zenburn-theme)
+(load-theme 'zenburn t)
