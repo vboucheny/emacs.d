@@ -47,3 +47,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; Org
+;;; Journal
+
+(package-install 'org-journal)
+(require 'org-journal)
+(setq org-journal-dir "~/org/journal/")
