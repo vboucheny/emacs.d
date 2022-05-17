@@ -35,22 +35,26 @@
 (setq ido-use-filename-at-point 'guess)
 (setq confirm-nonexistent-file-or-buffer nil)
 (setq ido-create-new-buffer 'always)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages '(org-journal zenburn-theme magit)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+
+
 
 ;; Org
 ;;; Journal
-
 (package-install 'org-journal)
 (require 'org-journal)
 (setq org-journal-dir "~/org/journal/")
+
+
+;;; Keybindings
+(define-key global-map "\C-ca" 'org-agenda)
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-cc" 'org-capture)
+
+;;; Agenda
+(setq org-agenda-files '("~/org/"))
+
+;;; Refiling
+(setq refile-file-path (expand-file-name "~/org/refile.org"))
+(setq org-refile-use-cache nil)
+(setq org-refile-use-outline-path t)
+(setq org-outline-path-complete-in-steps nil)
