@@ -50,10 +50,21 @@
          (list (line-beginning-position) (line-beginning-position 2)))))
 
 ;; Org
+
+;;; Default dirs
+(let ((default-directory "~/org/"))
+  (setq org-default-notes-file-path (expand-file-name "notes.org"))
+  (setq refile-file-path (expand-file-name "todo.org"))
+  (setq org-journal-dir (expand-file-name "journal")))
+  
 ;;; Journal
 (package-install 'org-journal)
 (require 'org-journal)
-(setq org-journal-dir "~/org/journal/")
+
+;;; Capture templates
+(setq org-capture-templates
+      (quote (("t" "todo" entry (file refile-file-path)
+               "* TODO %?"))))
 
 
 ;;; Keybindings
@@ -65,7 +76,6 @@
 (setq org-agenda-files '("~/org/"))
 
 ;;; Refiling
-(setq refile-file-path (expand-file-name "~/org/refile.org"))
 (setq org-refile-use-cache nil)
 (setq org-refile-use-outline-path t)
 (setq org-outline-path-complete-in-steps nil)
