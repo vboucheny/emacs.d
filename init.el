@@ -4,7 +4,6 @@
 ;;(setq debug-on-error t)
 
 
-
 (setq mac-command-modifier 'meta)
 
 ;; elpa
@@ -36,7 +35,19 @@
 (setq confirm-nonexistent-file-or-buffer nil)
 (setq ido-create-new-buffer 'always)
 
+;; Editing
+;;; Cut/copy the current line if no region is active
 
+(put 'kill-ring-save 'interactive-form
+     '(interactive
+       (if (use-region-p)
+           (list (region-beginning) (region-end))
+         (list (line-beginning-position) (line-beginning-position 2)))))
+(put 'kill-region 'interactive-form      
+     '(interactive
+       (if (use-region-p)
+           (list (region-beginning) (region-end))
+         (list (line-beginning-position) (line-beginning-position 2)))))
 
 ;; Org
 ;;; Journal
