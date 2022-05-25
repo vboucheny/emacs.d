@@ -63,8 +63,11 @@
 
 ;;; Capture templates
 (setq org-capture-templates
-      (quote (("t" "todo" entry (file refile-file-path)
-               "* TODO %?"))))
+      `(("t" "todo" entry (file refile-file-path)
+         "* TODO %?")
+	("n" "note" entry (file "")
+	 "* %? :NOTE:") ; "" => `org-default-notes-file'
+	))
 
 
 ;;; Keybindings
