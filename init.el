@@ -49,6 +49,14 @@
            (list (region-beginning) (region-end))
          (list (line-beginning-position) (line-beginning-position 2)))))
 
+;;; Duplicate line
+(package-install 'move-dup)
+(require 'move-dup)
+(define-key global-map [M-up] 'move-dup-move-lines-up)
+(define-key global-map [M-down] 'move-dup-move-lines-down)
+(define-key global-map "\C-cd" 'move-dup-duplicate-down)
+(define-key global-map "\C-cu" 'move-dup-duplicate-up)
+
 ;; Org
 
 ;;; Default dirs
