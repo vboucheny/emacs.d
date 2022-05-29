@@ -29,6 +29,7 @@
 (tool-bar-mode -1)
 (set-scroll-bar-mode nil)
 (menu-bar-mode -1)
+(setq visible-bell 1)
 
 ;; IDO
 (setq ido-enable-flex-matching t)
