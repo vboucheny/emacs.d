@@ -21,7 +21,7 @@
 (package-install 'zenburn-theme)
 (load-theme 'zenburn t)
 
-;; gui frames
+;; GUI
 ;; Suppress GUI features
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
@@ -30,6 +30,7 @@
 (set-scroll-bar-mode nil)
 (menu-bar-mode -1)
 (setq visible-bell 1)
+(fset 'yes-or-no-p 'y-or-n-p)
 
 ;; IDO
 (setq ido-enable-flex-matching t)
