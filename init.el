@@ -6,6 +6,9 @@
 
 (setq mac-command-modifier 'meta)
 
+;; Desktop
+(desktop-save-mode 1)
+
 ;; elpa
 (require 'package)
 (add-to-list 'package-archives
