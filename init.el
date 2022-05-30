@@ -6,6 +6,9 @@
 
 (setq mac-command-modifier 'meta)
 
+;; Custom
+(setq custom-file (concat user-emacs-directory "/custom.el"))
+
 ;; Desktop
 (desktop-save-mode 1)
 
