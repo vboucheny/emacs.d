@@ -98,3 +98,12 @@
 (setq org-refile-use-cache nil)
 (setq org-refile-use-outline-path t)
 (setq org-outline-path-complete-in-steps nil)
+;;; Org Babel
+(setq org-confirm-babel-evaluate nil)
+(with-eval-after-load 'org
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+     (ruby . t)
+     (shell . t)
+     )))
