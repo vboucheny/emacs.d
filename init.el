@@ -68,6 +68,7 @@
 (let ((default-directory "~/org/"))
   (setq org-default-notes-file-path (expand-file-name "notes.org"))
   (setq refile-file-path (expand-file-name "todo.org"))
+  (setq events-file-path (expand-file-name "events.org"))
   (setq org-journal-dir (expand-file-name "journal")))
   
 ;;; Journal
@@ -80,6 +81,8 @@
          "* TODO %?")
 	("n" "note" entry (file "")
 	 "* %? :NOTE:") ; "" => `org-default-notes-file'
+	("e" "event" entry (file events-file-path)
+	 "* %?\nSCHEDULED: %T")
 	))
 
 
